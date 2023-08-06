@@ -101,3 +101,58 @@ const clearPixels = () => {
 };
 
 clearButton.addEventListener('click', clearPixels);
+
+//* ----- Requisito bônus 10 e 11 -----
+const divForInputAndButton = document.createElement('div');
+divForInputAndButton.id = 'input-button';
+const sectionElement = document.querySelector(SECTION_ID);
+sectionElement.parentNode.insertBefore(divForInputAndButton, sectionElement);
+
+// input
+const input = document.createElement('input');
+input.id = 'board-size';
+input.type = 'number';
+input.min = '1';
+input.autofocus = true;
+input.placeholder = 'Digite um valor aqui';
+divForInputAndButton.appendChild(input);
+
+// button
+const btn = document.createElement('button');
+btn.id = 'generate-board';
+btn.textContent = 'Criar';
+divForInputAndButton.appendChild(btn);
+
+const deleteBoard = () => {
+  const boardPixels = document.querySelectorAll(PIXEL_CLASS);
+  for (let i = 0; i < boardPixels.length; i += 1) {
+    boardPixels[i].remove();
+  }
+};
+
+const makeBoard = (inputValue) => {
+  for (let i = 1; i <= inputValue ** 2; i += 1) {
+    const divPixels = document.createElement('div');
+    divPixels.classList.add('pixel');
+    document.querySelector(SECTION_ID).style.maxWidth = `${inputValue * 42}px`;
+    document.querySelector(PIXEL_BOARD_ID).appendChild(divPixels);
+  }
+};
+
+const checkAndCreateNewBoard = () => {
+  if (input.value === '') alert('Board inválido!');
+  if (input.value < 5) {
+    deleteBoard();
+    makeBoard(5);
+    input.value = '5';
+  } else if (input.value > 50) {
+    deleteBoard();
+    makeBoard(50);
+    input.value = '50';
+  } else {
+    deleteBoard();
+    makeBoard(input.value);
+  }
+};
+
+btn.addEventListener('click', checkAndCreateNewBoard);
