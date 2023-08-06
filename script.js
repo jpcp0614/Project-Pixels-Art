@@ -3,6 +3,9 @@ const COLOR_PALETTE_ID = '#color-palette';
 const PIXEL_BOARD_ID = '#pixel-board';
 const SECTION_ID = '#section-id';
 
+//* classes
+const BLACK_CLASS = '.black';
+
 //* ---------- Requisito 01 ----------
 const header = document.createElement('header');
 const headerInBody = document.body.appendChild(header);
@@ -41,3 +44,7 @@ for (let i = 0; i < 25; i += 1) {
   document.querySelector(SECTION_ID).style.maxWidth = `${5 * 42}px`; // limitar o tamanho da section (CSS)
   document.querySelector(PIXEL_BOARD_ID).appendChild(divPixel);
 }
+
+//* ---------- Requisito 06 ----------
+const selectColorBlack = document.querySelector(BLACK_CLASS);
+selectColorBlack.classList.add('selected');
