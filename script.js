@@ -6,6 +6,7 @@ const SECTION_ID = '#section-id';
 //* classes
 const BLACK_CLASS = '.black';
 const COLOR_CLASS = '.color';
+const PIXEL_CLASS = '.pixel';
 const SELECTED_CLASS = '.selected';
 
 //* ---------- Requisito 01 ----------
@@ -83,3 +84,20 @@ const paintPixel = (e) => {
 
 const pixelBoard = document.querySelector(PIXEL_BOARD_ID);
 pixelBoard.addEventListener('click', paintPixel);
+
+//* ---------- Requisito 09 ----------
+const clearButton = document.createElement('button');
+clearButton.id = 'clear-board';
+clearButton.textContent = 'Limpar';
+const elementSection = document.querySelector(SECTION_ID);
+elementSection.parentNode.insertBefore(clearButton, elementSection);
+
+const clearPixels = () => {
+  const pixels = document.querySelectorAll(PIXEL_CLASS);
+
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
+  }
+};
+
+clearButton.addEventListener('click', clearPixels);
