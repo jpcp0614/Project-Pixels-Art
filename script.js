@@ -156,3 +156,20 @@ const checkAndCreateNewBoard = () => {
 };
 
 btn.addEventListener('click', checkAndCreateNewBoard);
+
+//* ------- Requisito bônus 12 -------
+const generateRGB = () => {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+  return `rgb(${r}, ${g}, ${b})`;
+};
+
+const colorPalette = document.querySelectorAll(COLOR_CLASS);
+for (let i = 0; i < colorPalette.length; i += 1) {
+  if (colorPalette[i].classList[2] === 'selected') {
+    colorPalette[0].style.backgroundColor = 'black';
+  } else {
+    colorPalette[i].style.backgroundColor = generateRGB();
+  }
+}
