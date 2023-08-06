@@ -1,6 +1,5 @@
 :root {
 
-<<<<<<< HEAD
   --color-black: black;
 
   --color-cyan: cyan;
@@ -52,29 +51,11 @@ h1 {
   justify-content: center;
   margin: auto;
   margin-bottom: 50px;
-=======
-  --color-div-black: black;
-
-  --color-div-cyan: cyan;
-
-  --color-div-khaki: khaki;
-
-  --color-div-orange: orange;
-
-  --border: 1px solid black;
-}
-
-#color-palette {
-  margin-bottom: 20px;
->>>>>>> 6ac360938b230c3354d1003ec0a0bc11ec6e2e61
 }
 
 .color {
   border: var(--border);
-<<<<<<< HEAD
   cursor: pointer;
-=======
->>>>>>> 6ac360938b230c3354d1003ec0a0bc11ec6e2e61
   display: inline-block;
   height: 40px;
   margin-right: 4px;
@@ -86,7 +67,6 @@ h1 {
   transform: scale(1.1);
 }
 
-<<<<<<< HEAD
 /** ---------- Requisito 03 ---------- */
 .black {
   background-color: var(--color-black);
@@ -203,20 +183,4 @@ h1 {
 #btn-change:hover {
   background-color: transparent;
   color: var(--color-darkBlue);
-=======
-.black { /** Requisito 3 */
-  background-color: var(--color-div-black);
-}
-
-.cyan {
-  background-color: var(--color-div-cyan);
-}
-
-.khaki {
-  background-color: var(--color-div-khaki);
-}
-
-.orange {
-  background-color: var(--color-div-orange);
->>>>>>> 6ac360938b230c3354d1003ec0a0bc11ec6e2e61
 }
