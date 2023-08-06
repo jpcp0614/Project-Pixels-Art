@@ -62,3 +62,24 @@ const selectAllColors = document.querySelectorAll(COLOR_CLASS);
 for (let i = 0; i < selectAllColors.length; i += 1) {
   selectAllColors[i].addEventListener('click', selectColorInPalette);
 }
+
+//* ---------- Requisito 08 ----------
+const checkBackgroundColorInSection = () => {
+  const elementPixelBoard = document.querySelector(PIXEL_BOARD_ID);
+  const pixelBoardStyle = window.getComputedStyle(elementPixelBoard);
+  return pixelBoardStyle.getPropertyValue('background-color');
+};
+
+const paintPixel = (e) => {
+  const selected = document.querySelector(SELECTED_CLASS);
+  const selectStyle = window.getComputedStyle(selected);
+  const selectBackgroundColor = selectStyle.getPropertyValue('background-color');
+  e.target.style.backgroundColor = selectBackgroundColor;
+
+  if (checkBackgroundColorInSection() !== 'rgba(0, 0, 0, 0)') {
+    document.querySelector(PIXEL_BOARD_ID).style.backgroundColor = 'white';
+  }
+};
+
+const pixelBoard = document.querySelector(PIXEL_BOARD_ID);
+pixelBoard.addEventListener('click', paintPixel);
