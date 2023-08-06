@@ -43,3 +43,16 @@
 .orange {
   background-color: var(--color-div-orange);
 }
+
+#pixel-board {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.pixel { /** Requisito 5 */
+  background-color: white;
+  border: var(--border);
+  height: 40px;
+  width: 40px;
+}
