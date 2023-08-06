@@ -5,6 +5,8 @@ const SECTION_ID = '#section-id';
 
 //* classes
 const BLACK_CLASS = '.black';
+const COLOR_CLASS = '.color';
+const SELECTED_CLASS = '.selected';
 
 //* ---------- Requisito 01 ----------
 const header = document.createElement('header');
@@ -48,3 +50,15 @@ for (let i = 0; i < 25; i += 1) {
 //* ---------- Requisito 06 ----------
 const selectColorBlack = document.querySelector(BLACK_CLASS);
 selectColorBlack.classList.add('selected');
+
+//* ---------- Requisito 07 ----------
+const selectColorInPalette = (e) => {
+  const selected = document.querySelector(SELECTED_CLASS);
+  selected.classList.remove('selected');
+  e.target.classList.add('selected');
+};
+
+const selectAllColors = document.querySelectorAll(COLOR_CLASS);
+for (let i = 0; i < selectAllColors.length; i += 1) {
+  selectAllColors[i].addEventListener('click', selectColorInPalette);
+}
