@@ -1,0 +1,45 @@
+:root {
+
+  --color-div-black: black;
+
+  --color-div-cyan: cyan;
+
+  --color-div-khaki: khaki;
+
+  --color-div-orange: orange;
+
+  --border: 1px solid black;
+}
+
+#color-palette {
+  margin-bottom: 20px;
+}
+
+.color {
+  border: var(--border);
+  display: inline-block;
+  height: 40px;
+  margin-right: 4px;
+  transition: 0.2s;
+  width: 40px;
+}
+
+.color:hover {
+  transform: scale(1.1);
+}
+
+.black { /** Requisito 3 */
+  background-color: var(--color-div-black);
+}
+
+.cyan {
+  background-color: var(--color-div-cyan);
+}
+
+.khaki {
+  background-color: var(--color-div-khaki);
+}
+
+.orange {
+  background-color: var(--color-div-orange);
+}
