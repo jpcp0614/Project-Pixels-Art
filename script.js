@@ -78,7 +78,7 @@ const paintPixel = (e) => {
   const selectBackgroundColor = selectStyle.getPropertyValue('background-color');
   e.target.style.backgroundColor = selectBackgroundColor;
 
-  if (checkBackgroundColorInSection() !== 'rgba(0, 0, 0, 0)') {
+  if (checkBackgroundColorInSection() !== 'rgb(255, 255, 255)') {
     document.querySelector(PIXEL_BOARD_ID).style.backgroundColor = 'white';
   }
 };
@@ -188,3 +188,20 @@ const inputButton = document.querySelector(INPUT_BUTTON_ID);
 inputButton.parentNode.insertBefore(btnChange, inputButton);
 
 btnChange.addEventListener('click', changeColorsPalette);
+
+//* Selecionando um pixel já colorido, remove sua cor com duplo clique
+const getPixelColored = (e) => {
+  const coloredPixelClass = document.querySelectorAll(PIXEL_CLASS);
+
+  for (let i = 0; i < coloredPixelClass.length; i += 1) {
+    const myPixels = coloredPixelClass[i].style.backgroundColor;
+    if (myPixels !== 'rgb(255, 255, 255)') {
+      e.target.style.backgroundColor = 'white';
+    }
+  }
+};
+
+const coloredPixel = document.querySelectorAll(PIXEL_CLASS);
+for (let i = 0; i < coloredPixel.length; i += 1) {
+  coloredPixel[i].addEventListener('dblclick', getPixelColored);
+}
