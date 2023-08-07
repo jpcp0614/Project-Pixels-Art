@@ -3,8 +3,8 @@
 ## :black_large_square: :yellow_square: :green_square: :blue_square: :red_square: :purple_square:
 
 ## Autores
-- João Paulo Pereira
-- Valdênio Martinho
+- [João Paulo Pereira](https://github.com/jpcp0614)
+- [Valdênio Martinho](https://github.com/valdenio458)
 
 ## Sumário
 
