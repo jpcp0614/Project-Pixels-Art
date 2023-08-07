@@ -2,6 +2,10 @@
 
 ## :black_large_square: :yellow_square: :green_square: :blue_square: :red_square: :purple_square:
 
+## Autores
+- João Paulo Pereira
+- Valdênio Martinho
+
 ## Sumário
 
 - [Habilidades](#habilidades)
